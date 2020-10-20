@@ -15,7 +15,12 @@ module.exports = {
         type: Sequelize.TEXT
       },
       authorId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'authors',
+          key: 'id'
+        },
+        allowNull: false
       },
       createdAt: {
         allowNull: false,
