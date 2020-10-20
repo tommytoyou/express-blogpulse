@@ -108,7 +108,7 @@ Now, run the migration for the model and test the model's functionality. This ca
 **dbTest.js**
 
 ```js
-var db = require('./models')
+const db = require('./models')
 
 db.comment.create({
   name: 'Paul Allen',
@@ -123,7 +123,7 @@ db.comment.create({
 Be sure to also test querying comments off of articles, which should verify that the association exists. Here's an example, once you've created a comment:
 
 ```js
-var db = require('./models')
+const db = require('./models')
 
 db.article.findOne({
   where: { id: 1 },

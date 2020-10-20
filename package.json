@@ -1,26 +1,20 @@
 {
   "name": "express-blogpulse",
   "version": "1.0.0",
+  "description": "To practice 1:M associations, we'll be adding comment functionality to an existing blog application.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "lint:js": "node_modules/eslint/bin/eslint.js ./ ./**/*.js --fix; exit 0",
-    "lint:css": "node_modules/csslint/cli.js public/css/; exit 0"
+    "start": "node index.js"
   },
+  "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "babel-eslint": "^6.0.4",
-    "csslint": "^0.10.0",
-    "eslint": "^2.11.1"
-  },
   "dependencies": {
-    "ejs": "^2.4.2",
-    "express": "^4.13.4",
-    "express-ejs-layouts": "^2.1.0",
-    "moment": "^2.13.0",
-    "morgan": "^1.7.0",
-    "pg": "^7.9.0",
-    "rowdy-logger": "0.0.2",
-    "sequelize": "^5.3.5"
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "moment": "^2.29.1",
+    "morgan": "^1.10.0",
+    "pg": "^8.4.1",
+    "sequelize": "^6.3.5"
   }
 }

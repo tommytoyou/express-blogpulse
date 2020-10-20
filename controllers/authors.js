@@ -1,6 +1,6 @@
-var express = require('express')
-var db = require('../models')
-var router = express.Router()
+const express = require('express')
+const db = require('../models')
+const router = express.Router()
 
 // GET /authors - display all authors
 router.get('/', function(req, res) {

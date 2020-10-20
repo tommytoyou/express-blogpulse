@@ -1,6 +1,6 @@
-var express = require('express')
-var db = require('../models')
-var router = express.Router()
+const express = require('express')
+const db = require('../models')
+const router = express.Router()
 
 // POST /articles - create a new post
 router.post('/', function(req, res) {
