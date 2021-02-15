@@ -8,4 +8,27 @@
 
 <hr />
 
+<h2>Add a comment</h2>
+<form action='/articles/<%= article.id %>/comments' method='POST'>
+  <label for='name'>Name</label>
+  <input id='name' name='name'>
+  <br />
+  <label for='content'>Leave your comment here</label>
+  <br />
+  <textarea rows="4" cols="50" id='content' name='content'>
+  </textarea>
+  <br />
+  <button type="submit">Submit Comment</button>
+</form>
+<hr />
+<% for (let comment of article.comments)  { %>
+  <p>
+    <%= comment.content %>
+  </p>
+  <p>
+    - <%= comment.name %>
+  </p>
+  <hr />
+<% } %>
+
 <a href="/">&larr; Back Home</a>

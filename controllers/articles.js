@@ -32,7 +32,7 @@ router.get('/new', function(req, res) {
 router.get('/:id', function(req, res) {
   db.article.findOne({
     where: { id: req.params.id },
-    include: [db.author]
+    include: [db.author, db.comment]
   })
   .then(function(article) {
     if (!article) throw Error()
@@ -45,4 +45,22 @@ router.get('/:id', function(req, res) {
   })
 })
 
+// POST /articles/:id/comments - to create new associated comment
+router.post('/:id/comments', (req, res)=> {
+  db.article.findOne({
+    where: { id: req.params.id },
+  })
+  .then((article) => {
+    article.createComment({
+      name: req.body.name,
+      content: req.body.content
+    }).then((comment) => {
+    res.redirect(`/articles/${req.params.id}`)
+    })
+  })
+  .catch((error)=> {
+    console.log(error)
+    res.status(400).render('main/404')
+  })
+})
 module.exports = router
